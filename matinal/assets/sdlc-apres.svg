@@ -1,0 +1,68 @@
+<svg viewBox="0 0 295 430" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="a" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#9ca3af"/>
+    </marker>
+    <marker id="ap" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#a78bfa"/>
+    </marker>
+    <marker id="ag" markerWidth="6" markerHeight="5" refX="6" refY="2.5" orient="auto">
+      <polygon points="0 0, 6 2.5, 0 5" fill="#6ee7b7"/>
+    </marker>
+  </defs>
+
+  <!-- main flow — all w=180, cx=147, left=57, right=237 -->
+  <rect x="57" y="10" width="180" height="30" rx="4" fill="rgba(124,58,237,0.22)" stroke="rgba(167,139,250,0.65)" stroke-width="1.2"/>
+  <text x="147" y="25" text-anchor="middle" dominant-baseline="middle" fill="#ddd6fe" font-size="11" font-family="system-ui,sans-serif">Agent generates code</text>
+
+  <line x1="147" y1="40" x2="147" y2="62" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round" marker-end="url(#a)"/>
+
+  <rect x="57" y="66" width="180" height="30" rx="4" fill="rgba(124,58,237,0.22)" stroke="rgba(167,139,250,0.65)" stroke-width="1.2"/>
+  <text x="147" y="81" text-anchor="middle" dominant-baseline="middle" fill="#ddd6fe" font-size="11" font-family="system-ui,sans-serif">Agent self-verifies</text>
+
+  <line x1="147" y1="96" x2="147" y2="118" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round" marker-end="url(#a)"/>
+
+  <rect x="57" y="122" width="180" height="30" rx="4" fill="rgba(124,58,237,0.22)" stroke="rgba(167,139,250,0.65)" stroke-width="1.2"/>
+  <text x="147" y="137" text-anchor="middle" dominant-baseline="middle" fill="#ddd6fe" font-size="11" font-family="system-ui,sans-serif">Second agent reviews</text>
+
+  <line x1="147" y1="152" x2="147" y2="174" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round" marker-end="url(#a)"/>
+
+  <rect x="57" y="178" width="180" height="30" rx="4" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <text x="147" y="193" text-anchor="middle" dominant-baseline="middle" fill="#d1d5db" font-size="11" font-family="system-ui,sans-serif">Automated checks</text>
+
+  <line x1="147" y1="208" x2="147" y2="222" stroke="#9ca3af" stroke-width="1.2" stroke-linecap="round" marker-end="url(#a)"/>
+
+  <!-- diamond — cx=147 -->
+  <polygon points="147,226 210,260 147,294 84,260" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.22)" stroke-width="1.2"/>
+  <text x="147" y="260" text-anchor="middle" dominant-baseline="middle" fill="#d1d5db" font-size="10" font-family="system-ui,sans-serif">All clear?</text>
+
+  <!-- Yes — Y-fork from diamond bottom, curves left to Ship -->
+  <path d="M 147 294 Q 120 308 96 314 Q 84 318 84 330 L 84 346"
+        stroke="#6ee7b7" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        marker-end="url(#ag)"/>
+  <text x="65" y="316" fill="#6ee7b7" font-size="9" font-family="system-ui,sans-serif">Yes</text>
+
+  <!-- Novel issue — Y-fork from diamond bottom, curves right to Human review -->
+  <path d="M 147 294 Q 174 308 206 314 Q 228 318 228 330 L 228 346"
+        stroke="#9ca3af" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        marker-end="url(#a)"/>
+  <text x="218" y="310" fill="#9ca3af" font-size="8" font-family="system-ui,sans-serif">Novel</text>
+
+  <!-- F: Ship — cx=84 -->
+  <rect x="44" y="350" width="80" height="30" rx="4" fill="rgba(16,185,129,0.25)" stroke="rgba(52,211,153,0.65)" stroke-width="1.2"/>
+  <text x="84" y="365" text-anchor="middle" dominant-baseline="middle" fill="#6ee7b7" font-size="11" font-family="system-ui,sans-serif" font-weight="600">Ship</text>
+
+  <!-- G: Human review — cx=228 -->
+  <rect x="168" y="350" width="120" height="30" rx="4" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <text x="228" y="365" text-anchor="middle" dominant-baseline="middle" fill="#d1d5db" font-size="11" font-family="system-ui,sans-serif">Human review</text>
+
+  <!-- No-resolvable: E right(210,260) → right (x=272, outside boxes right=237) → up → A right(238,22) -->
+  <path d="M 210 260 L 258 260 Q 272 260 272 246 L 272 34 Q 272 22 258 22 L 238 22"
+        stroke="#a78bfa" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="5,3" marker-end="url(#ap)"/>
+
+  <!-- Human review → down to y=412 (below F+G) → left (x=22, outside boxes left=57) → up → A left(57,22) -->
+  <path d="M 228 380 L 228 400 Q 228 412 216 412 L 34 412 Q 22 412 22 400 L 22 34 Q 22 22 34 22 L 57 22"
+        stroke="#a78bfa" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+        stroke-dasharray="5,3" marker-end="url(#ap)"/>
+</svg>

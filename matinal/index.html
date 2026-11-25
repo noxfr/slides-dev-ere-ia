@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aimer le dev à l'heure de l'IA</title>
+
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="theme/css/liksi.css" />
+    <link rel="stylesheet" href="node_modules/reveal.js/dist/plugin/highlight/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-markdown="slides.md"
+          data-separator="^\r?\n---\r?\n"
+          data-separator-vertical="^\r?\n--\r?\n"
+          data-separator-notes="^Notes:"
+        ></section>
+      </div>
+    </div>
+
+    <script src="node_modules/reveal.js/dist/reveal.js"></script>
+    <script src="node_modules/reveal.js/dist/plugin/markdown.js"></script>
+    <script src="node_modules/reveal.js/dist/plugin/highlight.js"></script>
+    <script src="node_modules/reveal.js/dist/plugin/notes.js"></script>
+    <script src="theme/js/theme-toggle.js"></script>
+    <script>
+      Reveal.initialize({
+        width: 1280,
+        height: 720,
+        margin: 0.04,
+        minScale: 0.1,
+        maxScale: 2.0,
+        hash: true,
+        center: false,
+        controls: true,
+        progress: true,
+        transition: "fade",
+        transitionSpeed: "fast",
+        backgroundTransition: "none",
+        slideNumber: "c/t",
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealThemeToggle],
+      });
+
+      // Click anywhere on the slide to advance (right-click or shift+click to go back)
+      const reveal = document.querySelector(".reveal");
+      reveal.addEventListener("click", function (e) {
+        if (e.target.closest("a")) return;
+        if (e.shiftKey) {
+          Reveal.prev();
+        } else {
+          Reveal.next();
+        }
+      });
+      // Right-click fires "contextmenu", not "click" — handle it to go back
+      reveal.addEventListener("contextmenu", function (e) {
+        if (e.target.closest("a")) return;
+        e.preventDefault();
+        Reveal.prev();
+      });
+    </script>
+  </body>
+</html>
