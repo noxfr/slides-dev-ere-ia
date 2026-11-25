@@ -4,7 +4,10 @@
 
 ## Mathieu Durand & Stéphane Spassevitch
 
-### Matinales Liksi · Nantes, mardi 1er décembre · Rennes, mardi 8 décembre
+<div style="margin-top:40px; padding-left:24px; border-left:3px solid var(--mauve); text-align:left;">
+<p style="margin:0; font-size:0.9em; font-weight:700;" class="text-accent">Matinales Liksi</p>
+<p style="margin:8px 0 0; font-size:0.65em; color:var(--text-muted);"><strong style="color:#f9f9f9;">Nantes</strong> · mardi 1er décembre · 9h<span style="margin:0 20px; color:var(--violet);">◆</span><strong style="color:#f9f9f9;">Rennes</strong> · mardi 8 décembre · 9h</p>
+</div>
 
 <aside class="notes">
 Stéphane
